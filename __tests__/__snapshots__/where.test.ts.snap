@@ -288,6 +288,16 @@ Array [
 ]
 `;
 
+exports[`PrismaClient where caseInsensitive false mode false endsWith on null 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
 exports[`PrismaClient where caseInsensitive false mode false equals 1`] = `
 Array [
   Object {
@@ -299,6 +309,16 @@ Array [
 `;
 
 exports[`PrismaClient where caseInsensitive false mode false startsWith 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
+exports[`PrismaClient where caseInsensitive false mode false startsWith on null 1`] = `
 Array [
   Object {
     "id": 2,
@@ -328,6 +348,16 @@ Array [
 ]
 `;
 
+exports[`PrismaClient where caseInsensitive false mode true endsWith on null 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
 exports[`PrismaClient where caseInsensitive false mode true equals 1`] = `
 Array [
   Object {
@@ -339,6 +369,16 @@ Array [
 `;
 
 exports[`PrismaClient where caseInsensitive false mode true startsWith 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
+exports[`PrismaClient where caseInsensitive false mode true startsWith on null 1`] = `
 Array [
   Object {
     "id": 2,
@@ -505,6 +545,16 @@ Array [
 ]
 `;
 
+exports[`PrismaClient where caseInsensitive true mode false endsWith on null 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
 exports[`PrismaClient where caseInsensitive true mode false equals 1`] = `
 Array [
   Object {
@@ -516,6 +566,16 @@ Array [
 `;
 
 exports[`PrismaClient where caseInsensitive true mode false startsWith 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
+exports[`PrismaClient where caseInsensitive true mode false startsWith on null 1`] = `
 Array [
   Object {
     "id": 2,
@@ -545,6 +605,16 @@ Array [
 ]
 `;
 
+exports[`PrismaClient where caseInsensitive true mode true endsWith on null 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
 exports[`PrismaClient where caseInsensitive true mode true equals 1`] = `
 Array [
   Object {
@@ -556,6 +626,16 @@ Array [
 `;
 
 exports[`PrismaClient where caseInsensitive true mode true startsWith 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Dirk",
+    "sort": null,
+  },
+]
+`;
+
+exports[`PrismaClient where caseInsensitive true mode true startsWith on null 1`] = `
 Array [
   Object {
     "id": 2,

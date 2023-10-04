@@ -288,6 +288,25 @@ describe("PrismaClient where", () => {
             // expect(account).toEqual([data.account[1]]);
           })
 
+          test("startsWith on null", async () => {
+            await client.account.create({
+              data: {
+                name: null
+              }
+            });
+            const accounts = await client.account.findMany({
+              where: {
+                name: {
+                  startsWith: caseInsensitive ? "di" : "Di",
+                  mode: caseInsensitive && mode ? "insensitive" : "default",
+                },
+              },
+            })
+            expect(accounts.length).toBe(1)
+            expect(accounts).toMatchSnapshot()
+            // expect(account).toEqual([data.account[1]]);
+          })
+
           test("endsWith", async () => {
             const client = await createPrismaClient(data, mode ? undefined : {
               caseInsensitive: mode ? false : caseInsensitive,
@@ -304,6 +323,26 @@ describe("PrismaClient where", () => {
             // expect(account).toEqual([data.account[1]]);
           })
 
+          test("endsWith on null", async () => {
+            const client = await createPrismaClient(data, mode ? undefined : {
+              caseInsensitive: mode ? false : caseInsensitive,
+            })
+            await client.account.create({
+              data: {
+                name: null
+              }
+            });
+            const accounts = await client.account.findMany({
+              where: {
+                name: {
+                  endsWith: "rk",
+                  mode: caseInsensitive && mode ? "insensitive" : "default",
+                },
+              },
+            })
+            expect(accounts).toMatchSnapshot()
+            // expect(account).toEqual([data.account[1]]);
+          })
           
           test("contains", async () => {
             const accounts = await client.account.findMany({

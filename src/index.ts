@@ -637,7 +637,13 @@ const createPrismaMock = <P>(
         return matchAnd(item, filter)
       }
       if (child === "NOT") {
-        return !matchOr(item, filter)
+        if (Array.isArray(filter)) {
+          return !matchOr(item, filter)
+        }
+        item //?
+        filter //?
+        matchItems(item, filter) //?
+        return !matchItems(item, filter)
       }
       if (filter == null || filter === undefined) {
         if (filter === null) {
@@ -725,7 +731,7 @@ const createPrismaMock = <P>(
             caseInsensitive ||
             ("mode" in matchFilter && matchFilter.mode === "insensitive")
           ) {
-            val = val.toLowerCase ? val.toLowerCase() : val
+            val = val !== null && val.toLowerCase ? val.toLowerCase() : val
             Object.keys(matchFilter).forEach((key) => {
               const value = matchFilter[key]
               if (value.toLowerCase) {
@@ -757,7 +763,8 @@ const createPrismaMock = <P>(
             }
           }
           if ("startsWith" in matchFilter && match) {
-            match = val.indexOf(matchFilter.startsWith) === 0
+            match = val !== null && val !== undefined ? 
+              val.indexOf(matchFilter.startsWith) === 0 : false
           }
           if ("string_starts_with" in matchFilter && match) {
             match = val?.indexOf(matchFilter.string_starts_with) === 0
@@ -786,8 +793,9 @@ const createPrismaMock = <P>(
           }
           if ("endsWith" in matchFilter && match) {
             match =
-              val.indexOf(matchFilter.endsWith) ===
-              val.length - matchFilter.endsWith.length
+              val !== null && val !== undefined ? 
+                val.indexOf(matchFilter.endsWith) ===
+                val.length - matchFilter.endsWith.length : false
           }
           if ("contains" in matchFilter && match) {
             match = val.indexOf(matchFilter.contains) > -1
